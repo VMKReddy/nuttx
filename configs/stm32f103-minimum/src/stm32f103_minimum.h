@@ -43,6 +43,8 @@
 #include <nuttx/config.h>
 #include <nuttx/compiler.h>
 #include <stdint.h>
+#include "stm32.h"
+
 
 /************************************************************************************
  * Pre-processor Definitions
@@ -392,6 +394,11 @@ int stm32_tone_setup(void);
 
 #ifdef CONFIG_SENSORS_VEML6070
 int stm32_veml6070initialize(FAR const char *devpath);
+#endif
+
+
+#ifdef CONFIG_SLCD
+int stm32_slcd_initialize(FAR const char *devpath);
 #endif
 
 #endif /* __ASSEMBLY__ */

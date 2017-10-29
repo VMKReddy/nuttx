@@ -328,5 +328,13 @@ int stm32_bringup(void)
   stm32_wlinitialize();
 #endif
 
+#if defined(CONFIG_SLCD)
+  ret = stm32_slcd_initialize("/dev/slcd");
+  if (ret < 0)
+  {
+    syslog(LOG_ERR, "ERROR: stm32_slcd_initialize failed: %d\n", ret);
+  }
+#endif
+
   return ret;
 }
