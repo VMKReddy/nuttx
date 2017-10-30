@@ -105,6 +105,10 @@ ifeq ($(CONFIG_LCD_ST7567),y)
   CSRCS += stm32_lcd.c
 endif
 
+ifeq ($(CONFIG_LCD_SH1106_OLED_132),y)
+  CSRCS += stm32_lcd_sh1106.c
+endif
+
 ifeq ($(CONFIG_LCD_PCD8544),y)
   CSRCS += stm32_pcd8544.c
 endif
